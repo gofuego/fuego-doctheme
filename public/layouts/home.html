@@ -1,0 +1,13 @@
+{{define "content"}}
+<section class="hero">
+    <h1>{{.Page.Envelope.title}}</h1>
+    {{.Page.Content}}
+    {{- with .Page.Envelope.cta}}
+    <div class="cta">
+        {{- range .}}
+        <a class="btn{{if .ghost}} btn-ghost{{end}}" href="{{$.Site.BaseURL}}{{.url}}">{{.label}}</a>
+        {{- end}}
+    </div>
+    {{- end}}
+</section>
+{{end}}

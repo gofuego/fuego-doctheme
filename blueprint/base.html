@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="{{.Site.BaseURL}}/">
+    <title>{{.Page.Envelope.title}} — {{.Site.Name}}</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="banner">Internal · maintainer documentation — explains how it works, not how to use it</div>
+{{partial "topbar" .}}
+<div class="layout">
+    {{partial "sidebar" .}}
+    <main>
+    {{block "content" .}}<div class="page">{{.Page.Content}}</div>{{end}}
+    </main>
+</div>
+<footer>
+    <p>{{.Site.Name}} · internal docs · built with Fuego</p>
+</footer>
+</body>
+</html>

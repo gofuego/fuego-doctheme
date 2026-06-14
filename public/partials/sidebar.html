@@ -1,0 +1,12 @@
+{{- /* Generic fallback sidebar: a flat list of every doc page, sorted by
+       nav_weight. Sites override this partial with a curated, section-grouped
+       nav (user theme files win over the pack). Hidden on the home page. */ -}}
+{{- if ne .Page.Layout "home"}}
+<nav class="sidebar" aria-label="Documentation">
+    <ul>
+    {{- range sortBy (where .Site.Pages "layout" "doc") "nav_weight"}}
+        <li><a href="{{$.Site.BaseURL}}{{.URL}}"{{if eq .URL $.Page.URL}} class="current"{{end}}>{{.Envelope.title}}</a></li>
+    {{- end}}
+    </ul>
+</nav>
+{{- end}}

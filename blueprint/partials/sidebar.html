@@ -1,0 +1,10 @@
+{{- /* Generic fallback sidebar: a flat list of every page that declares a
+       nav_weight, sorted. Sites override this partial with a curated,
+       section-grouped nav (user theme files win over the pack). */ -}}
+<nav class="sidebar" aria-label="Documentation">
+    <ul>
+    {{- range sortBy (where .Site.Pages "layout" "doc") "nav_weight"}}
+        <li><a href="{{$.Site.BaseURL}}{{.URL}}"{{if eq .URL $.Page.URL}} class="current"{{end}}>{{.Envelope.title}}</a></li>
+    {{- end}}
+    </ul>
+</nav>

@@ -1,0 +1,12 @@
+{{define "content"}}
+<article class="doc">
+    <h1>{{.Page.Envelope.title}}</h1>
+    {{- with .Page.Envelope.summary}}<p class="lede">{{.}}</p>{{end}}
+    {{.Page.Content}}
+    {{- with .Page.Envelope.tags}}
+    <div class="doc-tags">
+        {{- range .}}<a class="tag" href="{{$.Site.BaseURL}}/tags/{{.}}/">{{.}}</a>{{end}}
+    </div>
+    {{- end}}
+</article>
+{{end}}
