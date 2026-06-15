@@ -11,7 +11,7 @@ eng.Use(doctheme.Blueprint())  // private *-internal maintainer docs (muted, ban
 ```
 
 Each pack carries an embedded theme FS — `base.html`, `layouts/`, `renderers/`,
-and a `static/` subtree (stylesheet + a root redirect). The engine layers it
+and a `static/` subtree (the stylesheet). The engine layers it
 *under* the consuming site's own `theme/` directory, so a site supplies only the
 genuinely site-specific bits (its `partials/topbar.html` and a curated
 `partials/sidebar.html`) plus its content, and inherits the rest. Anything a site
