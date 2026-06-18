@@ -2,7 +2,7 @@
 // documentation sites as two Fuego format packs.
 //
 // Each pack carries an embedded theme FS (base.html, layouts/, renderers/, and
-// a static/ subtree with the stylesheet and a root redirect). A site consumes
+// a static/ subtree with the stylesheet). A site consumes
 // one with eng.Use(doctheme.Public()) or eng.Use(doctheme.Blueprint()) and
 // supplies only the genuinely site-specific bits — its topbar and sidebar
 // partials and its content. Anything a site puts in its own theme/ directory
